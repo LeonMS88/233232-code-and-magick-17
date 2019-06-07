@@ -14,12 +14,12 @@ var ELM_DISTANCE = 50;
 
 var TEXT_COLOR = '#000';
 
-var renderCloud = function(ctx, x, y, color) {
+var renderCloud = function (ctx, x, y, color) {
   ctx.fillStyle = color;
   ctx.fillRect(x, y, CLOUD_WIDTH, CLOUD_HEIGHT);
 };
 
-var getMaxElement = function(arr) {
+var getMaxElement = function (arr) {
   var maxElement = arr[0];
 
   for (var i = 0; i < arr.length; i++) {
@@ -32,15 +32,15 @@ var getMaxElement = function(arr) {
 };
 
 window.renderStatistics = function (ctx, names, times) {
-  //Отрисовка облака
+  // Отрисовка облака
   renderCloud(ctx, CLOUD_X + GAP, CLOUD_Y + GAP, 'rgba(0, 0, 0, 0.7)');
   renderCloud(ctx, CLOUD_X, CLOUD_Y, '#fff');
 
-  //Отрисовка текста результата
+  // Отрисовка текста результата
   ctx.fillStyle = TEXT_COLOR;
   ctx.font = '16px PT Mono';
-  ctx.fillText("Ура вы победили!", 240, 30);
-  ctx.fillText("Список результатов:", 225, 50);
+  ctx.fillText('Ура вы победили!', 240, 30);
+  ctx.fillText('Список результатов:', 225, 50);
 
   var maxTime = getMaxElement(times);
 
@@ -53,7 +53,7 @@ window.renderStatistics = function (ctx, names, times) {
 
     ctx.fillStyle = TEXT_COLOR;
     ctx.fillText(PLAYER_TIME, (CLOUD_WIDTH / 2 - ELM_DISTANCE) + (COLUMN_WIDTH + ELM_DISTANCE) * i, (CLOUD_HEIGHT / 2 - GAP) - ELM_DISTANCE);
-    ctx.fillText(PLAYER_NAME, (CLOUD_WIDTH / 2 - ELM_DISTANCE) + (COLUMN_WIDTH + ELM_DISTANCE) * i, CLOUD_HEIGHT - GAP );
+    ctx.fillText(PLAYER_NAME, (CLOUD_WIDTH / 2 - ELM_DISTANCE) + (COLUMN_WIDTH + ELM_DISTANCE) * i, CLOUD_HEIGHT - GAP);
 
   }
-}
+};
