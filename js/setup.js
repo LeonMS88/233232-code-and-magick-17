@@ -22,38 +22,33 @@ var nameWizard = function () {
   return nameSurename;
 };
 
-// Находим случайный цвет мантии
-var coatColorWizard = function () {
-  var color = Math.floor(Math.random() * coatColor.length);
-  return coatColor[color];
-};
+// Находим случайный цвет
+var getRandomColor = function (array) {
+  var color = Math.floor(Math.random() * array.length);
 
-// Находим случайный цвет глаз
-var eyesColorWizard = function () {
-  var color = Math.floor(Math.random() * eyesColor.length);
-  return eyesColor[color];
+  return array[color];
 };
 
 var wizards = [
   {
     name: nameWizard(),
-    coatColor: coatColorWizard(),
-    eyesColor: eyesColorWizard()
+    coatColor: getRandomColor(coatColor),
+    eyesColor: getRandomColor(eyesColor)
   },
   {
     name: nameWizard(),
-    coatColor: coatColorWizard(),
-    eyesColor: eyesColorWizard()
+    coatColor: getRandomColor(coatColor),
+    eyesColor: getRandomColor(eyesColor)
   },
   {
     name: nameWizard(),
-    coatColor: coatColorWizard(),
-    eyesColor: eyesColorWizard()
+    coatColor: getRandomColor(coatColor),
+    eyesColor: getRandomColor(eyesColor)
   },
   {
     name: nameWizard(),
-    coatColor: coatColorWizard(),
-    eyesColor: eyesColorWizard()
+    coatColor: getRandomColor(coatColor),
+    eyesColor: getRandomColor(eyesColor)
   }
 ];
 
