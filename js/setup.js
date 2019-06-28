@@ -127,16 +127,22 @@ setupWizardFireball.addEventListener('mouseover', function () {
 
 var wizards = [];
 
-for (var i = 0; i < 4; i++) {
-  var renderDataWizard = function (name, coatColor, eyesColor) {
-    var data = {
-      name: nameWizard(),
-      coatColor: getRandomColor(coatColor),
-      eyesColor: getRandomColor(eyesColor)
-    };
-    return data;
+var renderDataWizard = function (name, coat, eyes) {
+  var data = {
+    name: name,
+    coatColor: coat,
+    eyesColor: eyes
   };
-  wizards.push(renderDataWizard(name, coatColor, eyesColor));
+  return data;
+};
+
+for (var i = 0; i < 4; i++) {
+
+  var wizardName = nameWizard();
+  var wizardCoat = getRandomColor(coatColor);
+  var wizardEyes = getRandomColor(eyesColor);
+
+  wizards.push(renderDataWizard(wizardName, wizardCoat, wizardEyes));
 }
 
 
@@ -153,8 +159,8 @@ var renderWizard = function (wizard) {
 var getFragment = function (fragment) {
   fragment = document.createDocumentFragment();
 
-  for (var i = 0; i < wizards.length; i++) {
-    fragment.appendChild(renderWizard(wizards[i]));
+  for (var j = 0; j < wizards.length; j++) {
+    fragment.appendChild(renderWizard(wizards[j]));
   }
   similarListElement.appendChild(fragment);
 
